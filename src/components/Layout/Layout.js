@@ -1,4 +1,5 @@
-import NavigationBar from "../NavigationBar/NavigationBar";
+import ComponentCard from "../ComponentCard/ComponentCard";
+import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 
 
 export default function Layout({ children }) {
@@ -6,7 +7,8 @@ export default function Layout({ children }) {
         <div className='container'>
             <NavigationBar />
             <main>{children}</main>
-
+            <ComponentCard />
         </div>
     )
 }
+
