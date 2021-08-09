@@ -1,9 +1,9 @@
-
+import ComponentCardStyless from '../../../styles/ComponentCard.module.css';
 
 const ComponentCard = () => {
     return (
-        <div>
-          
+        <div className="card">
+            sssss
         </div>
     );
 };

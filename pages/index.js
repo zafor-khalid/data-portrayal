@@ -1,18 +1,16 @@
 import Head from 'next/head'
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { landingPageDataContext } from '../src/components/Contexts/Contexts';
-import { stylesContext } from '../src/components/Contexts/Contexts';
 
 export const getStaticProps = async () => {
   let landingPageData;
-  let stylesData;
 
   const res = await fetch('https://api.npoint.io/888cba28053234afdf51');
   landingPageData = await res.json();
-  const result = await fetch('https://api.npoint.io/836be77be325d0a34bd8');
-  stylesData = await result.json();
+  
+  
 
-  if (!landingPageData || !stylesData) {
+  if (!landingPageData) {
     return {
       notFound: true
     }
@@ -21,7 +19,6 @@ export const getStaticProps = async () => {
   return {
     props: {
       landingPageData: landingPageData,
-      stylesData: stylesData
     },
   }
 }
@@ -32,11 +29,9 @@ export default function Home({ landingPageData, stylesData }) {
   // console.log(landingPageData, stylesData);
 
   const [pageData, setPageData] = useContext(landingPageDataContext);
-  setPageData(landingPageData);
-
-  const [styles, setStyles] = useContext(stylesContext);
-  setStyles(stylesData);
-  // console.log(styles);
+  useEffect(() => {
+    setPageData(landingPageData);
+  }, [])
   return (
 
 

@@ -2,6 +2,7 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from '../../../../styles/NavigationBar.module.css'
 
 const NavigationBar = () => {
+    
     return (
         <>
             <Navbar  expand="lg" sticky='top' className={styles.navigationBar}>
