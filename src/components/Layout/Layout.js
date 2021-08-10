@@ -4,10 +4,10 @@ import Contexts from '../Contexts/Contexts';
 import ComponentCard from "../ComponentCard/ComponentCard";
 import dataContext from '../Contexts/Contexts';
 import { stylesContext } from "../Contexts/Contexts";
+import FooterCard from "../Shared/Footer/FooterCard";
 
 export default function Layout({ children }) {
     const [styles, setStyles] = useContext(stylesContext);
-    // console.log(styles);
     const commonStyles = {
         backgroundColor: styles?.style?.['background-color'],
         color: styles?.style?.['text-color'],
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
                 <NavigationBar />
                 <main>{children}</main>
                 <ComponentCard />
-                
+                <FooterCard />
             </div>
       
     )

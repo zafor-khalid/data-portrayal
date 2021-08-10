@@ -13,11 +13,10 @@ const Contexts = ({ children }) => {
             .then(res => res.json())
             .then(data => {
                 setStyles(data);
-                 ;
             })
     }, [])
-
-    // console.log(styles)
+    
+    
     return (
         <dataContext.Provider value={[pageData, setPageData]}>
             <languageContext.Provider value={[language, setLanguage]}>

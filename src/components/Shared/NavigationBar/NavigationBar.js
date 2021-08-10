@@ -1,13 +1,12 @@
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from '../../../../styles/NavigationBar.module.css'
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext,  } from 'react';
 import { languageContext } from '../../Contexts/Contexts'
 
 const NavigationBar = () => {
     const [language, setLanguage] = useContext(languageContext);
     const handleLanguage = (status) => {
         setLanguage(status);
-
     }
     console.log(language);
     return (
@@ -18,9 +17,9 @@ const NavigationBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', outline: 'none'}} />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto" >
-                            <NavDropdown title={language == 'en' ? "Language" : "ভাষা"} id="basic-nav-dropdown" size="sm" >
+                            <NavDropdown title={language == 'en' ? "English" : "বাংলা"} id="basic-nav-dropdown" size="sm" >
                                 <NavDropdown.Item href="" onClick={() => handleLanguage('en')}>English</NavDropdown.Item>
-                                <NavDropdown.Item href="" onClick={() => handleLanguage('bn')}>Bangla</NavDropdown.Item>
+                                <NavDropdown.Item href="" onClick={() => handleLanguage('bn')}><span style={{fontSize:'20px'}}>বাংলা</span></NavDropdown.Item>
 
                             </NavDropdown>
                         </Nav>
