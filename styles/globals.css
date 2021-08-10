@@ -5,10 +5,38 @@ html, body {
   font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   min-height: 100vh;
   height: 100vh;
-  
 }
-
 
 * {
   box-sizing: border-box;
+}
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.customButton{
+  background-image: linear-gradient(45deg, rgb(2, 83, 138), rgb(0, 19, 37) ) !important;
+  border: none !important;
+
+}
+
+.customButton:hover{
+  background-image: linear-gradient(45deg, rgb(0, 3, 5), rgb(0, 82, 136) ) !important;
+  box-shadow: 2px 2px 5px black;
+}
+.cardView{
+  height: 42vh;
+}
+.customCard{
+    margin: 0 auto;
+    top: 10vh;
+}
+
+.cardView:hover{
+  box-shadow: 2px 2px 15px black;
+}
+
+.customCard:hover{
+  box-shadow: 2px 2px 15px black;
 }
