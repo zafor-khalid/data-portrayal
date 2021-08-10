@@ -1,4 +1,8 @@
 .navigationBar{
-    color: yellow;
     border-bottom: 2px solid rgb(42, 107, 211);
+    font-weight: bolder;
+}
+
+.navbarbrand{
+    color:aqua;
 }

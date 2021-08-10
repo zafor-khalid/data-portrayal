@@ -6,11 +6,11 @@ import Contexts from '../src/components/Contexts/Contexts';
 function MyApp({ Component, pageProps }) {
 
   return (
-    <Layout>
-      <Contexts>
+    <Contexts>
+      <Layout>
         <Component {...pageProps} />
-      </Contexts>
-    </Layout>
+      </Layout>
+    </Contexts>
   )
 }
 export default MyApp

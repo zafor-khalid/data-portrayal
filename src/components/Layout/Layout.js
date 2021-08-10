@@ -1,36 +1,28 @@
-import ComponentCard from "../ComponentCard/ComponentCard";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
-// import { stylesContext } from '../../components/Contexts/Contexts';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import Contexts from '../Contexts/Contexts';
+import ComponentCard from "../ComponentCard/ComponentCard";
+import dataContext from '../Contexts/Contexts';
+import { stylesContext } from "../Contexts/Contexts";
 
 export default function Layout({ children }) {
-    const [styles, setStyles] = useState();
+    const [styles, setStyles] = useContext(stylesContext);
+    // console.log(styles);
+    const commonStyles = {
+        backgroundColor: styles?.style?.['background-color'],
+        color: styles?.style?.['text-color'],
+        fontFamily: styles?.style?.['text-font']
+    }
 
-    useEffect(() => {
-        fetch('https://api.npoint.io/836be77be325d0a34bd8')
-            .then(res => res.json())
-            .then(data => {
-                setStyles(data);
-            })
-    }, [setStyles])
-    // console.log(styles?.style?.["card-font"])
-    const customStyles = {
-        backgroundColor: styles?.style["background-color"],
-        color: styles?.style["text-color"],
-        fontFamily: styles?.style["text-font"]
-    }
-    const cardStyles = {
-        fontFamily: styles?.style["card-font"], 
-        color: styles?.style["card-text-color"], 
-        backgroundColor: styles?.style["card-background-color"]
-    }
     return (
-        <div className='container' style={customStyles}>
-            <NavigationBar />
-            <main>{children}</main>
-            <ComponentCard style={cardStyles} />
-            aaa
-        </div>
+        
+            <div className='container' style={commonStyles}>
+                <NavigationBar />
+                <main>{children}</main>
+                <ComponentCard />
+                aaa
+            </div>
+      
     )
 }
 
