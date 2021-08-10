@@ -8,7 +8,6 @@ const NavigationBar = () => {
     const handleLanguage = (status) => {
         setLanguage(status);
     }
-    console.log(language);
     return (
         <>
             <Navbar bg='white' expand="lg" sticky='top' className={styles.navigationBar}>

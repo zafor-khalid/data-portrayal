@@ -8,15 +8,6 @@ const Contexts = ({ children }) => {
     const [language, setLanguage] = useState('en');
     const [styles, setStyles] = useState({});
 
-    useEffect(() => {
-        fetch('https://api.npoint.io/836be77be325d0a34bd8')
-            .then(res => res.json())
-            .then(data => {
-                setStyles(data);
-            })
-    }, [])
-    
-    
     return (
         <dataContext.Provider value={[pageData, setPageData]}>
             <languageContext.Provider value={[language, setLanguage]}>
